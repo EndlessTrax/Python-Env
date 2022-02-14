@@ -4,11 +4,11 @@
 .DESCRIPTION
     Create a virtual environment with your specified version of Python, and install required packages.
 .EXAMPLE
-    New-Python.ps1 -Version 3.9
+    New-Python.ps1 -Version 3.10
 .EXAMPLE
-    New-Python.ps1 -Path path\to\python.exe
+    New-Python.ps1 -PythonPath path\to\python.exe
 .EXAMPLE
-    New-Python.ps1 -Version 3.9 -Name env -RequirementsFile requirements.txt
+    New-Python.ps1 -Version 3.10 -Name env -RequirementsFile requirements.txt
 #>
 [CmdletBinding()]
 Param (
