@@ -4,11 +4,11 @@
 .DESCRIPTION
     Create a virtual environment with your specified version of Python, and install required packages.
 .EXAMPLE
-    New-Python.ps1 -Version 3.10
+    New-PythonEnv.ps1 -Version 3.10
 .EXAMPLE
-    New-Python.ps1 -PythonPath path\to\python.exe
+    New-PythonEnv.ps1 -PythonPath path\to\python.exe
 .EXAMPLE
-    New-Python.ps1 -Version 3.10 -Name env -RequirementsFile requirements.txt
+    New-PythonEnv.ps1 -Version 3.10 -Name env -RequirementsFile requirements.txt
 #>
 [CmdletBinding()]
 Param (
@@ -48,14 +48,13 @@ try {
     Write-Output "Updating pip to latest version..."
     python -m pip install --upgrade pip
 
-    # If a requirements file is given, install its dependancies
+    # If a requirements file is given, install it's dependencies
     if ($RequirementsFile) {
         Write-Output "Installing dependencies from $RequirementsFile..."
         python -m pip install -r $RequirementsFile
     }
 
     Write-Output "Environment setup complete. Happy coding!"
-
 }
 catch {
     Write-Error -Message $Error[0]
