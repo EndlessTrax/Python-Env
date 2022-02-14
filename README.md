@@ -21,13 +21,13 @@ This script assumes you want to create a new Python environment in the `cwd`.
 
 ```pwsh
 # Minimum required
-PS> New-Python.ps1 -Version 3.10
+PS> New-PythonEnv.ps1 -Version 3.10
 
 # Use custom Python path
-PS> New-Python.ps1 -PythonPath "path\to\python.exe"
+PS> New-PythonEnv.ps1 -PythonPath "path\to\python.exe"
 
 # Specify non-default name and install requirements
-PS> New-Python.ps1 -Version 3.10 -Name env -RequirementsFile requirements.txt
+PS> New-PythonEnv.ps1 -Version 3.10 -Name env -RequirementsFile requirements.txt
 ```
 
 ## Add script to Path
